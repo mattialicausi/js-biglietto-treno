@@ -3,17 +3,17 @@
     --celeste:#b9d0ff;
     --light-gray: #77767c;
     --white: #fff3ff;
-
-
 }
 
 .my-container{
     width: 1200px;
     margin: 0 auto;
-    background-color: var(--celeste);
+    background-color: red;
     padding: 10px;
 }
 
 body{
-    color: var(--white);
+    color: white;
 }
+
+
