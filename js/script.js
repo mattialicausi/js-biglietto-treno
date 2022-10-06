@@ -5,7 +5,7 @@
 // x il prezzo del biglietto è definito in base ai km (0.21 € al km)
 // x va applicato uno sconto del 20% per i minorenni
 // x va applicato uno sconto del 40% per gli over 65.
-// L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
+// x L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
 
 const kmDesiderati = parseInt(prompt('Quanti chilometri vuoi percorrere?'));
@@ -23,29 +23,41 @@ if(isNaN(kmDesiderati) || isNaN(etaUtente)){
 
 let prezzoKm = 0.21;
 
+let prezzoFinale = 0;
+
 let prezzoBiglietto = prezzoKm * kmDesiderati;
 prezzoBiglietto = prezzoBiglietto.toFixed(2);
 console.log(prezzoBiglietto);
 
 
 if(etaUtente < 18){
-     let prezzoFinale = (prezzoBiglietto * 20) / 100;
+     prezzoFinale = (prezzoBiglietto * 20) / 100;
      prezzoFinale = prezzoFinale.toFixed(2);
      alert('Sei minorenne, hai uno sconto del 20%!');
      console.log (prezzoFinale);
-    
   }  else if(etaUtente > 65){
-         let prezzoFinale = (prezzoBiglietto * 40) / 100;
+         prezzoFinale = (prezzoBiglietto * 40) / 100;
          prezzoFinale = prezzoFinale.toFixed(2);
          alert('Hai più di 65 anni, hai uno sconto del 40%!');
          console.log (prezzoFinale);
     } else{
-        let prezzoFinale = prezzoBiglietto;
+         prezzoFinale = prezzoBiglietto;
          console.log(prezzoFinale);
     }
 
 
-let prezzoFinale = document.getElementById('risultato'); 
+let elemento = document.getElementById('risultato');
+elemento.innerHTML = 'Prezzo del biglietto: ' + prezzoFinale + ' €';
+
+let elemento2 = document.getElementById('eta-utente');
+elemento2.innerHTML = 'La tua età: ' + etaUtente;
+
+let elemento3 = document.getElementById('km-desiderati');
+elemento3.innerHTML = 'I chilometri che vuoi percorrere: ' + kmDesiderati;
+
+
+
+
 
 
 
