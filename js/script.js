@@ -33,17 +33,19 @@ if(etaUtente < 18){
      prezzoFinale = prezzoFinale.toFixed(2);
      alert('Sei minorenne, hai uno sconto del 20%!');
      console.log (prezzoFinale);
+    
   }  else if(etaUtente > 65){
          let prezzoFinale = (prezzoBiglietto * 40) / 100;
          prezzoFinale = prezzoFinale.toFixed(2);
          alert('Hai più di 65 anni, hai uno sconto del 40%!');
          console.log (prezzoFinale);
     } else{
-         console.log(prezzoBiglietto);
+        let prezzoFinale = prezzoBiglietto;
+         console.log(prezzoFinale);
     }
 
 
-
+let prezzoFinale = document.getElementById('risultato'); 
 
 
 
